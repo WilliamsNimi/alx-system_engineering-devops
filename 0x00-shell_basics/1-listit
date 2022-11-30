@@ -1,2 +1,5 @@
 #!/bin/bash
-echo "${LS}"
+for file in *
+do
+    echo "$file"
+done
