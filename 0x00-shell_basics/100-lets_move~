@@ -1,2 +1,0 @@
-#!/bin/bash
-mv -type f -name "[[:upper:]]*" /tmp/u/
