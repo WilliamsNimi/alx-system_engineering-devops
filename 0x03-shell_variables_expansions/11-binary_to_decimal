@@ -1,0 +1,2 @@
+#!/bin/bash
+printf "%u\n" $((2#$BINARY))

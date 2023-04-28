@@ -1,0 +1,8 @@
+#!/bin/bash
+a=({a..z}{a..z})
+for i in ${a[@]}
+do
+if [[ "$i" != "oo" ]]
+then echo $i
+fi
+done
