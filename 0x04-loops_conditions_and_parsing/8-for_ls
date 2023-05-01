@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #A bash script to print items as a list
-for f in $(ls);
+for f in *;
 do
-	echo $f
+	echo "$f"
 done
