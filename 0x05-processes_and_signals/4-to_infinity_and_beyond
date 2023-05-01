@@ -3,5 +3,6 @@
 i=4
 while [ $i -gt 0 ];
 do
-      echo "To infinity and beyond"
+    echo "To infinity and beyond"
+    sleep 2
 done
