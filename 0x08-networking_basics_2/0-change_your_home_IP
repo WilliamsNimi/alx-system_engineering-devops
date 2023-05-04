@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#A script to configure ubuntu server localhost to 127.0.0.2 and Facebook.com to 8.8.8.8
+echo "127.0.0.2 localhost" | sudo tee -a >/etc/hosts
+echo "8.8.8.8 Facebook.com" | sudo tee -a >/etc/hosts
