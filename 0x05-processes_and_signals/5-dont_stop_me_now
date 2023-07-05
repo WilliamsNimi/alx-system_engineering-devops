@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-#A bash script to kill a specific process
-kill "4-to_infinity_and_beyond"

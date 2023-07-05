@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-#Print the pid of this process
-$BASHPID

@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-#print process id and name
-pid=$(pgrep bash)
-echo "$pid bash"

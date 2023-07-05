@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-#A while loop to infinitely print a statement
-i=4
-while [ $i -gt 0 ];
-do
-    echo "To infinity and beyond"
-    sleep 2
-done

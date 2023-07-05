@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-i=4
-while [ $i le 4 ];
-do
-      echo "To infinity and beyond"
-done
