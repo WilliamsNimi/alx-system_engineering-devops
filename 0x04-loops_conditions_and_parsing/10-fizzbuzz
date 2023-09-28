@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#FizzBuzz
+for((n=1; n<=100; n++));
+do
+        if [[ $((n%3)) == 0 && $((n%5)) == 0 ]]; then
+	     echo "FizzBuzz"
+	elif [ $((n%3)) == 0 ]; then
+	     echo "Fizz"
+	elif [ $((n%5)) == 0 ]; then
+	     echo "Buzz"
+	else
+		echo "$n"
+	fi
+done
