@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#print process id and name
+pidof 'bash'; echo 'bash'
