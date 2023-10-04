@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#A script to configure ubuntu server localhost to 127.0.0.2 and Facebook.com to 8.8.8.8
+sudo -- sh -c -e "echo 127.0.0.2 localhost >> /etc/hosts";
+sudo -- sh -c -e "echo 8.8.8.8 Facebook.com >> /etc/hosts";
