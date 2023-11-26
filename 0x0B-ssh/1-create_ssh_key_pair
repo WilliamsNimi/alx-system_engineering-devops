@@ -1,0 +1,3 @@
+#!usr/bin/env bash
+#Creating an ssh pair with sshkeygen
+ssh-keygen -t rsa -P betty -b 4096 -f school
