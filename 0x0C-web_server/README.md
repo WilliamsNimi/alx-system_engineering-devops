@@ -1,0 +1,1 @@
+This is the web server folder for alx web server projects
