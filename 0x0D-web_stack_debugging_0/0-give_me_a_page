@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This is a server debugging project
+sudo systemctl start apache2
