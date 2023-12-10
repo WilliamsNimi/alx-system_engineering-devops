@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Return custom header after installing NGINX
+# shellcheck disable=SC2154
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo mkdir -p /var/www/html
+echo 'Hello World!' > /var/www/html/index.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+redirection="\\\n\tlocation /redirect_me {\n\t\t return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n"
+notfound="\\\n\terror_page 404 /404.html;\n\n\tlocation = /404.html {\n\t\tinternal;\n\t}\n"
+header_val="\\\n\tadd_header X-Served-By \"$HOSTNAME\";"
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.backup
+sudo sed -i "531 $redirection" /etc/nginx/sites-available/default
+sudo sed -i "531 $notfound" /etc/nginx/sites-available/default
+sudo sed -i "631 $header_val" /etc/nginx/nginx.conf
+sudo service nginx restart
