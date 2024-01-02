@@ -8,6 +8,7 @@ import urllib.request
 
 
 def api_request():
+    """ Request Function """
     id = sys.argv[1]
     emp_todo = []
     com_todo = []
