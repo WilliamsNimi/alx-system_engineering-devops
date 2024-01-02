@@ -17,12 +17,12 @@ def api_request():
     total = 0
     todo_url = "https://jsonplaceholder.typicode.com/todos/"
     user_url = "https://jsonplaceholder.typicode.com/users/" + id
-    e_name = ""
+    e_nam = ""
     with urllib.request.urlopen(todo_url) as response:
         todo_json = json.loads(response.read())
     with urllib.request.urlopen(user_url) as res:
         user_json = json.loads(res.read())
-    e_name = user_json['name']
+    e_nam = user_json['name']
     for todos in todo_json:
         if todos['userId'] == int(id):
             emp_todo.append(todos)
@@ -34,9 +34,9 @@ def api_request():
     l_com = len(com_todo)
     l_uncom = len(uncom_todo)
     total = l_com + l_uncom
-    print("Employee {} is done with tasks({}/{}):".format(e_name, l_com, total))
+    print("Employee {} is done with tasks({}/{}):".format(e_nam, l_com, total))
     for items in com_todo:
-        print("\t" + items)
+        print("\t " + items)
 
 
 if __name__ == "__main__":
