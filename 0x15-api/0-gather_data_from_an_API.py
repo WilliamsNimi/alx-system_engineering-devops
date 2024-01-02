@@ -2,9 +2,10 @@
 """ Fetching data from an API """
 
 
-import urllib.request
-import sys
 import json
+import sys
+import urllib.request
+
 
 def api_request():
     id = sys.argv[1]
@@ -26,7 +27,7 @@ def api_request():
         if todos['userId'] == int(id):
             emp_todo.append(todos)
     for entries in emp_todo:
-        if entries['completed'] == True:
+        if entries['completed'] is True:
             com_todo.append(entries['title'])
         else:
             uncom_todo.append(entries['title'])
