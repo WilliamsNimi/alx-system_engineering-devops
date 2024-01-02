@@ -34,7 +34,7 @@ def api_request():
     l_com = len(com_todo)
     l_uncom = len(uncom_todo)
     total = l_com + l_uncom
-    print("Employee {} is done with tasks({}/{})".format(e_name, l_com, total))
+    print("Employee {} is done with tasks({}/{}):".format(e_name, l_com, total))
     for items in com_todo:
         print("\t" + items)
 
