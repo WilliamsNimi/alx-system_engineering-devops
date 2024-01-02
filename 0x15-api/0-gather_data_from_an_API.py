@@ -1,0 +1,42 @@
+#!/usr/bin/python3
+""" Fetching data from an API """
+
+
+import urllib.request
+import sys
+import json
+
+def api_request():
+    id = sys.argv[1]
+    emp_todo = []
+    com_todo = []
+    uncom_todo = []
+    l_com = 0
+    l_uncom = 0
+    total = 0
+    todo_url = "https://jsonplaceholder.typicode.com/todos/"
+    user_url = "https://jsonplaceholder.typicode.com/users/" + id
+    e_name = ""
+    with urllib.request.urlopen(todo_url) as response:
+        todo_json = json.loads(response.read())
+    with urllib.request.urlopen(user_url) as res:
+        user_json = json.loads(res.read())
+    e_name = user_json['name']
+    for todos in todo_json:
+        if todos['userId'] == int(id):
+            emp_todo.append(todos)
+    for entries in emp_todo:
+        if entries['completed'] == True:
+            com_todo.append(entries['title'])
+        else:
+            uncom_todo.append(entries['title'])
+    l_com = len(com_todo)
+    l_uncom = len(uncom_todo)
+    total = l_com + l_uncom
+    print("Employee {} is done with tasks({}/{})".format(e_name, l_com, total))
+    for items in com_todo:
+        print("\t" + items)
+
+
+if __name__ == "__main__":
+    api_request()
