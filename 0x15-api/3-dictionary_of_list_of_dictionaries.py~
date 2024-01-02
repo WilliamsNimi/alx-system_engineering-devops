@@ -9,10 +9,9 @@ import urllib.request
 
 def to_json():
     """ Request Function """
-    id = sys.argv[1]
-    emp_todo = []
+    emp_todo ={}
     todo_url = "https://jsonplaceholder.typicode.com/todos/"
-    user_url = "https://jsonplaceholder.typicode.com/users/" + id
+    user_url = "https://jsonplaceholder.typicode.com/users/"
     e_nam = ""
     rows = {}
     row = {}
@@ -20,10 +19,10 @@ def to_json():
         todo_json = json.loads(response.read())
     with urllib.request.urlopen(user_url) as res:
         user_json = json.loads(res.read())
-    e_nam = user_json['name']
-    for todos in todo_json:
-        if todos['userId'] == int(id):
-            emp_todo.append(todos)
+    for user in user_json:
+        print(user)
+    """for todos in todo_json:
+        emp_todo['userId'].append(todos)
     rows[str(id)] = []
     for tod in emp_todo:
         row["task"] = tod['title']
@@ -31,8 +30,8 @@ def to_json():
         row["username"] = user_json['username']
         rows[str(id)].append(row)
     json_ = json.dumps(rows)
-    with open(id+".json", 'w') as file:
-        file.write(json_)
+    with open("todo_all_employees.json", 'w') as file:
+        file.write(json_)"""
 
 
 if __name__ == "__main__":
