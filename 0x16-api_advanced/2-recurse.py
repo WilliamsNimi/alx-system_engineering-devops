@@ -5,11 +5,11 @@
 import requests
 import sys
 
-def recurse(subreddit, hot_list=[], after=""):
+def recurse(subreddit, hot_list=[]):
     """ Top 10 titles in Subreddits recursive"""
     red_url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     headers = {"User-Agent":"new_user"}
-    params = {"after": after}
+    params = {"after": "after"}
     response = requests.get(red_url, headers=headers, params=params, allow_redirects=False)
     if response.status_code == 200:
         content = response.json().get('data').get('children')
@@ -18,7 +18,7 @@ def recurse(subreddit, hot_list=[], after=""):
         hot_list.extend(titles)
         if content2 is None:
             return hot_list
-        return recurse(subreddit, hot_list, content2)
+        return recurse(subreddit, hot_list)
     else:
         print(None)
 
