@@ -2,8 +2,8 @@
 """ Fetching data from the Reddit API """
 
 
-import sys
 import requests
+import sys
 
 def top_ten(subreddit):
     """ Top 10 titles in Subreddits"""
@@ -21,3 +21,4 @@ def top_ten(subreddit):
 
 if __name__ == "__main__":
     top_ten(sys.argv[1])
+    

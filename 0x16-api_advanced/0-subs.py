@@ -17,3 +17,4 @@ def number_of_subscribers(subreddit):
 
 if __name__ == "__main__":
     number_of_subscribers(sys.argv[1])
+    
