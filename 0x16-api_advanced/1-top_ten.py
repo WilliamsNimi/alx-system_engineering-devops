@@ -6,6 +6,7 @@ import sys
 import requests
 
 def top_ten(subreddit):
+    """ Top 10 titles in Subreddits"""
     red_url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     headers = {"User-Agent":"new_user"}
     params = {"limit":10}
